@@ -12,9 +12,20 @@
 
 ## 开始
 
-```bash
-git clone 
-```
+git clone https://github.com/siemens/jailhouse-images.git
+## 修改如下文本：jailhouse-images/recipes-jailhouse/jailhouse/jailhouse.inc
+## git://github.com/siemens/jailhouse;branch=next;protocol=https
+
+KAS_ALLOW_ROOT=yes ./kas-container menu
+# 选择合适的选项并保存开始编译
+
+## image保存在
+# jailhouse-images/build/tmp/deploy/images/rpi4/demo-image-jailhouse-demo-rpi4.wic.img
+
+## 下载镜像，并写入sd卡
+## dd if=xxx.img of=/dev/rdisk4 bs=1m
+
+## 启动树莓派
 
 ## jailhouse-images配置分析
 
